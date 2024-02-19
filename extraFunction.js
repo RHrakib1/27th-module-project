@@ -1,0 +1,25 @@
+function hideElement(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('hidden')
+}
+function showElement(elementId) {
+    const element1 = document.getElementById(elementId);
+    element1.classList.remove('hidden')
+}
+
+// rendom number get
+function rendomAlphabate() {
+    // get a rendom alphabate 
+    const alphabateString = 'abcdefghijklmnopqrstuvwxyz';
+    const alphabates = alphabateString.split('');
+
+    // get a rendom index between
+    // rendom pabo vogna onsho soho
+    const rendomNumber = Math.random() * 25;
+    // purno number e r index pabo
+    const rendomIndex = Math.round(rendomNumber);
+    // console.log(rendomIndex);
+
+    const alphabate = alphabates[rendomIndex];
+    return alphabate;
+}
