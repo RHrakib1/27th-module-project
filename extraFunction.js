@@ -9,11 +9,21 @@ function showElement(elementId) {
 function addBackgroundColor(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('bg-orange-400')
-
 }
 function removeBackgroundColor(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400')
+}
+
+function getTextelementById(elementId) {
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+}
+ function  getelementByValueId(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
 
 }
 

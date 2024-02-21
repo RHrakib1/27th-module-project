@@ -21,18 +21,28 @@ function keybordUpEvent(event) {
     // chake match
     if (playerPress === expactetAlpha) {
         console.log('you win');
-       
 
-        // update score
-        // step 1: get the currwent score
-        const currentElementScore = document.getElementById('current-score');
-        const currentText = currentElementScore.innerText;
-        const currentScore = parseInt(currentText);
-        console.log(currentScore);
-        // step 2: increment score'
+        // current score
+        const currentScore = getTextelementById('current-score');
+        const updateScore = currentScore + 1;
+        getelementByValueId('current-score', updateScore);
+
+
+
+
+
+
+        // ------------------------------------
+        // // update score
+        // // step 1: get the currwent score
+        // const currentElementScore = document.getElementById('current-score');
+        // const currentText = currentElementScore.innerText;
+        // const currentScore = parseInt(currentText);
+        // console.log(currentScore);
+        // // step 2: increment score'
         const newScore = currentScore + 1;
-        //step 3: show score update
-        currentElementScore.innerText = newScore;
+        // //step 3: show score update
+        // currentElementScore.innerText = newScore;
 
         // new round start
         removeBackgroundColor(expactetAlpha);
@@ -40,16 +50,28 @@ function keybordUpEvent(event) {
     }
     else {
         console.log('you losse');
-        // step 1: get the current life count
-        const currentelementLife = document.getElementById('life-count');
-        const currentLife = currentelementLife.innerText;
-        const currentLifeCount = parseInt(currentLife);
-        console.log(currentLifeCount);
+        const currentLife = getTextelementById('current-score');
+        const updateLife = currentLife - 1;
+        getelementByValueId('life-count', updateLife)
 
-        // step 2: (-) TO THE current life count
-        const newLife = currentLifeCount - 1;
-        // step 3: display to the final life count number
-        currentelementLife.innerText = newLife;
+
+
+
+
+
+
+
+        // ----------------------------------------
+        //     // step 1: get the current life count
+        //     const currentelementLife = document.getElementById('life-count');
+        //     const currentLife = currentelementLife.innerText;
+        //     const currentLifeCount = parseInt(currentLife);
+        //     console.log(currentLifeCount);
+
+        //     // step 2: (-) TO THE current life count
+        //     const newLife = currentLifeCount - 1;
+        //     // step 3: display to the final life count number
+        //     currentelementLife.innerText = newLife;
     }
 }
 document.addEventListener('keyup', keybordUpEvent);
@@ -71,3 +93,4 @@ function play() {
     showElement('playGround');
     continewGame();
 }
+
