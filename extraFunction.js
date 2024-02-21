@@ -6,6 +6,16 @@ function showElement(elementId) {
     const element1 = document.getElementById(elementId);
     element1.classList.remove('hidden')
 }
+function addBackgroundColor(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-orange-400')
+
+}
+function removeBackgroundColor(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400')
+
+}
 
 // rendom number get
 function rendomAlphabate() {
