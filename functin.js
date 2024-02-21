@@ -21,23 +21,35 @@ function keybordUpEvent(event) {
     // chake match
     if (playerPress === expactetAlpha) {
         console.log('you win');
-        removeBackgroundColor(expactetAlpha);
+       
 
         // update score
-        // get the currwent score
+        // step 1: get the currwent score
         const currentElementScore = document.getElementById('current-score');
         const currentText = currentElementScore.innerText;
         const currentScore = parseInt(currentText);
         console.log(currentScore);
-        // increment score'
+        // step 2: increment score'
         const newScore = currentScore + 1;
-        // show score update
+        //step 3: show score update
         currentElementScore.innerText = newScore;
 
+        // new round start
+        removeBackgroundColor(expactetAlpha);
         continewGame();
     }
     else {
-        console.log('you losse')
+        console.log('you losse');
+        // step 1: get the current life count
+        const currentelementLife = document.getElementById('life-count');
+        const currentLife = currentelementLife.innerText;
+        const currentLifeCount = parseInt(currentLife);
+        console.log(currentLifeCount);
+
+        // step 2: (-) TO THE current life count
+        const newLife = currentLifeCount - 1;
+        // step 3: display to the final life count number
+        currentelementLife.innerText = newLife;
     }
 }
 document.addEventListener('keyup', keybordUpEvent);
